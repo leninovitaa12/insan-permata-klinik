@@ -1,130 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="css/login.css" />
-    <title>Sign in - Sign up</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="forms-container">
-        <div class="signin-signup">
-          <form action="#" class="sign-in-form">
-            <h2 class="title">Sign in</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" value="Login" class="btn solid" />
-            <p class="social-text">Or Sign in with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              </a>
-            </div>
-          </form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login dan Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
-          <!--sign Up Form-->
-
-          <form action="#" class="sign-up-form">
-            <h2 class="title">Sign up</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" name="username"/>
-            </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" name="email" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" name="password" />
-            </div>
-            <div class="input-field">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Repeat Password" name="password" />
-              </div>
-
-            <!-- Role Management -->
-            <div class="row">
-                <div class="input-field">
+</head>
+<body>
+    <div class="container" id="signup" style="display: none;">
+        <h1 class="form-title">Register</h1>
+        <form action="{{ route('postlogin') }}" method="POST">
+            {{ csrf_field() }}
+            <div class="input-group">
                 <i class="fas fa-user"></i>
-                <select class="selectbox" name="is_role"required>
-                    <option value="">Select Role</option>
-                    <option value="2">Manager</option>
-                    <option value="1">Admin</option>
-                </select>
+                <input type="text" name="fname" id="fname" placeholder="First Name" required>
+                <label for="fname">First Name</label>
             </div>
 
-            <div class="pass"><a href="">Forgot Password</a></div>
-            <div class="Signup-link">Sign In? <a href="">Login</a></div>
-
-            <!-- Role Management end -->
-
-            <input type="submit" value="Sign Up" class="btn solid" />
-            <p class="social-text">Or Sign up with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              </a>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="lname" id="lname" placeholder="Last Name" required>
+                <label for="fname">Last Name</label>
             </div>
-          </form>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="password" required>
+                <label for="password">Password</label>
+            </div>
+            <input type="submit" class="btn" value="Sign Up" name="Signup">
+        </form>
+        <p class="or">
+            --------or--------
+        </p>
+        <div class="icons">
+            <i class="fab fa-google"></i>
+            <i class="fab fa-facebook"></i>
         </div>
-      </div>
-
-      <div class="panels-container">
-        <div class="panel left-panel">
-          <div class="content">
-            <h3>Silahkan Login Dulu Pack!</h3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-              ex ratione. Aliquid!
-            </p>
-            <button class="btn transparent" id="sign-up-btn">
-              Sign up
-            </button>
-          </div>
-          <img src="img/log.svg" class="image" alt="" />
+        <div class="links">
+            <p>Sudah Punya Akun?</p>
+            <button id="signInButton">Sign In</button>
         </div>
-        <div class="panel right-panel">
-          <div class="content">
-            <h3>Registrasi diri Anda</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              laboriosam ad deleniti.
-            </p>
-            <button class="btn transparent" id="sign-in-btn">
-              Sign in
-            </button>
-          </div>
-          <img src="img/register.svg" class="image" alt="" />
-        </div>
-      </div>
     </div>
 
-    <script src="js/login.js"></script>
-  </body>
-</html>
+    <div class="container" id="signIn">
+        <h1 class="form-title">Sign In</h1>
+        <form method="POST" action="">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="password" required>
+                <label for="password">Password</label>
+            <p class="recover">
+                <a href="#">Recover Password</a>
+            </p>
+            </div>
+            <input type="submit" class="btn" value="Sign In" name="SignIn">
+        </form>
+        <p class="or">
+            --------or--------
+        </p>
+        <div class="icons">
+            <i class="fab fa-google"></i>
+            <i class="fab fa-facebook"></i>
+        </div>
+        <div class="links">
+            <p>Don't have account yet?</p>
+            <button id="signUpButton">Sign Up</button>
+        </div>
+    </div>
+
+    <script src="{{ asset('js/login.js') }}"></script>
+</body>

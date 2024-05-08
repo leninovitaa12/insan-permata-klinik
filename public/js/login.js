@@ -1,11 +1,14 @@
-const sign_in_btn = document.querySelector("#sign-in-btn");
-const sign_up_btn = document.querySelector("#sign-up-btn");
-const container = document.querySelector(".container");
+const signUpButton = document.getElementById('signUpButton');
+const signInButton = document.getElementById('signInButton');
+const signInForm = document.getElementById('signIn');
+const signUpForm = document.getElementById('signup');
 
-sign_up_btn.addEventListener("click", () => {
-  container.classList.add("sign-up-mode");
+signUpButton.addEventListener('click', function(){
+    signInForm.style.display = "none"; // menyembunyikan formulir masuk
+    signUpForm.style.display = "block"; // menampilkan formulir pendaftaran
 });
 
-sign_in_btn.addEventListener("click", () => {
-  container.classList.remove("sign-up-mode");
+signInButton.addEventListener('click', function(){
+    signUpForm.style.display = "none"; // menyembunyikan formulir pendaftaran
+    signInForm.style.display = "block"; // menampilkan formulir masuk
 });

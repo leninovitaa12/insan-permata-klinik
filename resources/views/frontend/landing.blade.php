@@ -280,11 +280,11 @@
      <section id="google-map">
         <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
        </div>
-     <!-- How to change your own map point
-            1. Go to Google Maps
-            2. Click on your location point
-            3. Click "Share" and choose "Embed map" tab
-            4. Copy only URL and paste it within the src="" field below
+     <!-- Map Point
+            1. Google Maps
+            2. Klik Lokasi
+            3. Klik "Share" klik "Embed map" tab
+            4. Copi
 	-->
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.329590021234!2d111.52379907439115!3d-7.647662992368428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79be55b03d3d8f%3A0x1151682f4c35e5b4!2sMadiun%20State%20Polytechnic!5e0!3m2!1sen!2sid!4v1713933696158!5m2!1sen!2sid" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
      </section>
@@ -375,7 +375,7 @@
           </div>
      </footer>
 
-     <!-- SCRIPTS -->
+     <!-- SCRIPTS JS -->
      <script src="{{ asset('lp/js/jquery.js') }}"></script>
      <script src="{{ asset('lp/js/bootstrap.min.js') }}"></script>
      <script src="{{ asset('lp/js/jquery.sticky.js') }}"></script>
