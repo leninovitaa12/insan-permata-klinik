@@ -1,85 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login dan Register</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title></title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
 </head>
+
 <body>
-    <div class="container" id="signup" style="display: none;">
-        <h1 class="form-title">Register</h1>
-        <form action="{{ route('postlogin') }}" method="POST">
-            {{ csrf_field() }}
-            <div class="input-group">
-                <i class="fas fa-user"></i>
-                <input type="text" name="fname" id="fname" placeholder="First Name" required>
-                <label for="fname">First Name</label>
+    <div class="wrapper">
+        <div class="title">Login</div>
+        <form action="{{ url('process_login') }}" method="POST">
+            @csrf
+            <div class="input-box">
+                <input type="text" name="username" id="name" required value="{{ old('name') }}"/>
+                <label for="name" id="labeluser">Username</label>
+                <i class="fa fa-user" id="user_icon"></i>
             </div>
-
-            <div class="input-group">
-                <i class="fas fa-user"></i>
-                <input type="text" name="lname" id="lname" placeholder="Last Name" required>
-                <label for="fname">Last Name</label>
+            <div class="input-box">
+                <input type="password" name="password" id="pass" required />
+                <label for="pass" id="labelpass">Password</label>
+                <i class="fa fa-eye-slash" id="pass_icon"></i>
             </div>
-            <div class="input-group">
-                <i class="fas fa-envelope"></i>
-                <input type="email" name="email" id="email" placeholder="Email" required>
-                <label for="email">Email</label>
+            <div class="forget">
+                <label>
+                    <input type="checkbox" id="checkbox"/> Remember me
+                </label>
+                <a href="{{ url('/forget') }}">Forget Password</a>
             </div>
-            <div class="input-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" id="password" placeholder="password" required>
-                <label for="password">Password</label>
+            <div class="input-box button">
+                <input id="button" type="submit" value="Submit" class="" required />
             </div>
-            <input type="submit" class="btn" value="Sign Up" name="Signup">
+            <div class="register">
+                <span class="text">Don't have an account? </span><a href="{{ url('/register') }}" class="link">Register</a>
+            </div>
         </form>
-        <p class="or">
-            --------or--------
-        </p>
-        <div class="icons">
-            <i class="fab fa-google"></i>
-            <i class="fab fa-facebook"></i>
-        </div>
-        <div class="links">
-            <p>Sudah Punya Akun?</p>
-            <button id="signInButton">Sign In</button>
-        </div>
     </div>
-
-    <div class="container" id="signIn">
-        <h1 class="form-title">Sign In</h1>
-        <form method="POST" action="">
-            <div class="input-group">
-                <i class="fas fa-envelope"></i>
-                <input type="email" name="email" id="email" placeholder="Email" required>
-                <label for="email">Email</label>
-            </div>
-            <div class="input-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" id="password" placeholder="password" required>
-                <label for="password">Password</label>
-            <p class="recover">
-                <a href="#">Recover Password</a>
-            </p>
-            </div>
-            <input type="submit" class="btn" value="Sign In" name="SignIn">
-        </form>
-        <p class="or">
-            --------or--------
-        </p>
-        <div class="icons">
-            <i class="fab fa-google"></i>
-            <i class="fab fa-facebook"></i>
-        </div>
-        <div class="links">
-            <p>Don't have account yet?</p>
-            <button id="signUpButton">Sign Up</button>
-        </div>
-    </div>
-
     <script src="{{ asset('js/login.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        @if (session('success'))
+            Swal.fire({
+                icon: "success",
+                title: "BERHASIL",
+                text: "{{ session('success') }}",
+                showConfirmButton: false,
+                timer: 2000
+            });
+        @elseif (session('error'))
+        Swal.fire({
+                icon: "error",
+                title: "PERINGATAN",
+                text: "{{ session('error') }}",
+                showConfirmButton: false,
+                timer: 2000
+            });
+        @endif
+    </script>
 </body>
+
+</html>
