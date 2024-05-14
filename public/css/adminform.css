@@ -17,10 +17,6 @@ body {
     display: flex;
 }
 
-.aside {
-    width: 23%;
-    height: 100%;
-}
 
 .content {
     width: 100%;
@@ -78,9 +74,7 @@ form {
     margin: 0 auto;
     margin-top: 50px;
     padding: 20px;
-    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #475ffd;
 }
 
 /* Styling for form labels */
