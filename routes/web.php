@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminFormController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KlienController;
@@ -40,4 +41,6 @@ Route::resource('admin_dashboard',AdminDashboardController::class);
 
 //membuat rute admin_klien
 Route::resource('admin_klien', \App\Http\Controllers\KlienController::class);
+
+Route::resource('admin_form', \App\Http\Controllers\AdminFormController::class);
 

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>BerandaDasboard</title>
-        <link href="{{ asset('lp/css/admindashboard.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/admindashboard.css') }}" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
@@ -30,6 +30,7 @@
                                     <h5 class="itu"> Apa yang anda butuhkan hari ini?</h5>
                                 </div>
                                 <div class="Klinik">
+                                    <img src="{{ asset ('storage/admin-asset/payment.png') }}" class="gambar-euy" alt="gambar dashboard " >
                                 </div>
                             </div>
                             <div class="kotakbawah">
