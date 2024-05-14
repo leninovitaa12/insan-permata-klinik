@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,10 @@ Route::get('registration', [AuthController::class, 'register']);
 Route::get('/billing', function () {
     return view('Admin.billing');
 });
+
+//admin yola
+Route::resource('admin_dashboard',AdminDashboardController::class);
+
+//membuat rute admin_klien
+Route::resource('admin_klien', \App\Http\Controllers\KlienController::class);
+
