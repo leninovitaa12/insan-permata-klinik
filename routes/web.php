@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KlienController;
 use App\Http\Controllers\AdminFormController;
@@ -32,3 +35,9 @@ Route::get('/billing', function () {
 //admin profile triani
 Route::resource('profile', \App\Http\Controllers\ProfilAdminController::class);
 Route::get('/edit_profile', [ProfilAdminController::class, 'editProfile'])->name('edit_profile');
+//admin yola
+Route::resource('admin_dashboard',AdminDashboardController::class);
+
+//membuat rute admin_klien
+Route::resource('admin_klien', \App\Http\Controllers\KlienController::class);
+
