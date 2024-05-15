@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('profile_admins', function (Blueprint $table) {
             $table->bigInteger('nik')->primary(); // Menggunakan bigInteger untuk NIK
-            $table->string('nama', 50); // Tambahkan panjang jika diperlukan
-            $table->string('tempat_lahir', 15); // Tambahkan panjang jika diperlukan
+            $table->string('nama'); // Tambahkan panjang jika diperlukan
+            $table->string('tempat_lahir'); // Tambahkan panjang jika diperlukan
             $table->date('tanggal_lahir');
             $table->text('alamat');
-            $table->string('no_telp', 13); // Tambahkan panjang yang sesuai, misalnya 13
+            $table->string('no_telp'); // Tambahkan panjang yang sesuai, misalnya 13
             $table->string('email', 25)->unique();
             $table->enum('jenis_kelamin', ['Laki-Laki', 'Perempuan']); // Menggunakan enum untuk jenis kelamin
             $table->timestamps();
