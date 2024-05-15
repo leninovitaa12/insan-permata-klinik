@@ -24,16 +24,16 @@
     </div>
 
     <style>
-        
+
             .aside {
                 width: 23%;
                 height: 100%;
             }
 
             .sidebar {
-                height: 100%; 
+                height: 100%;
                 width: 100%;
-                background-color: #7ea1cd; 
+                background-color: #2192FF;
             }
 
             .sidebar ul {
@@ -67,7 +67,7 @@
                 margin-left: 55px;
                 border-color:  #333;
                 border-radius: 5px;
-                background-color:  #7ea1cd;
+                background-color:  #2192FF;
             }
 
 

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminFormController;
@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KlienController;
 use App\Http\Controllers\EditBioController;
 use App\Http\Controllers\ProfilAdminController;
-use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\SesiController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 Route::get('/', function () {
@@ -53,6 +53,8 @@ Route::get('/edit_profile', [ProfilAdminController::class, 'editProfile'])->name
 
 //membuat rute admin_klien
 Route::resource('admin_klien', \App\Http\Controllers\KlienController::class);
-
 Route::resource('admin_form', \App\Http\Controllers\AdminFormController::class);
+
+//kehadiran
+
 
