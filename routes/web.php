@@ -46,7 +46,7 @@ Route::get('/billing', function () {
     return view('Admin.billing');
 });
 
-//admin profile triani
+//admin profile tria
 Route::resource('profile', \App\Http\Controllers\ProfilAdminController::class);
 Route::get('/edit_profile', [ProfilAdminController::class, 'editProfile'])->name('edit_profile');
 
