@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
 
 :root {
     --blue-color: #2192FF;
@@ -22,7 +22,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right,#b1c8ea, #75a6f4);
+    background: linear-gradient(to right, #b1c8ea, #75a6f4);
 }
 
 .wrapper {
@@ -103,17 +103,9 @@ body {
     background: transparent;
 }
 
-.input-box input:focus ~ label {
-    top: 0;
-    color: var(--blue-color);
-    font-size: 15px;
-}
-
 .input-box input:focus ~ label,
-.input-box input:valid ~ label {
-    top: 0;
-    font-size: 15px;
-    color: var(--blue-color);
+.input-box input:not(:placeholder-shown) ~ label {
+    display: none;
 }
 
 .input-box i#user_icon,

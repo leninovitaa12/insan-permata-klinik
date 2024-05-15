@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Register</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
@@ -17,23 +17,23 @@
         <form action="{{ url('process_register') }}" method="POST">
             @csrf
             <div class="input-box">
-                <input type="text" name="username" id="user" required />
+                <input type="text" name="username" id="user" required placeholder=" " />
                 <label for="user" id="labeluser">Username</label>
                 <i class="fa fa-user" id="user_icon"></i>
             </div>
             <div class="input-box">
-                <input type="email" name="email" id="email" required />
+                <input type="email" name="email" id="email" required placeholder=" " />
                 <label for="email" id="labelemail">Email</label>
                 <i class="fa fa-user" id="user_icon"></i>
             </div>
             <div class="input-box">
-                <input type="password" name="password" id="pass" required />
+                <input type="password" name="password" id="pass" required placeholder=" " />
                 <label for="pass" id="labelpass">Password</label>
                 <i class="fa fa-eye-slash" id="pass_icon"></i>
             </div>
             <div class="input-box">
-                <input type="password" name="password" id="pass" required />
-                <label for="pass" id="labelpass">Repeat Password</label>
+                <input type="password" name="password_confirmation" id="pass_confirmation" required placeholder=" " />
+                <label for="pass_confirmation" id="labelpass_confirmation">Repeat Password</label>
                 <i class="fa fa-eye-slash" id="pass_icon"></i>
             </div>
             <div class="forget">
@@ -46,7 +46,7 @@
                 <input id="button" type="submit" value="Submit" class="" required />
             </div>
             <div class="register">
-                <span class="text">You have a account? </span><a href="{{ url('/') }}" class="link">Login</a>
+                <span class="text">You have an account? </span><a href="{{ url('/') }}" class="link">Login</a>
             </div>
         </form>
     </div>
@@ -71,8 +71,6 @@
             });
         @endif
     </script>
-</body>
-
 </body>
 
 </html>

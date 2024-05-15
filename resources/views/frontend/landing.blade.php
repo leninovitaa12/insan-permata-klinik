@@ -66,7 +66,7 @@
                          <li><a href="#team" class="smoothScroll">Doctors</a></li>
                          <li><a href="#google-map" class="smoothScroll">Contact</a></li>
                          <li><a href="{{ route('login') }}" class="nav-item nav-link">Login</a></li>
-                         <li class="appointment-btn"><a href="#appointment">Make an appointment</a></li>
+                         <li class="appointment-btn"><a href="{{ route('login') }}">Make an appointment</a></li>
                     </ul>
                </div>
           </div>
@@ -217,7 +217,7 @@
 
 
      <!-- MAKE AN APPOINTMENT -->
-     <section id="appointment" data-stellar-background-ratio="3">
+     {{-- <section id="appointment" data-stellar-background-ratio="3">
           <div class="container">
                <div class="row">
 
@@ -273,7 +273,7 @@
 
                </div>
           </div>
-     </section>
+     </section> --}}
 
 
      <!-- GOOGLE MAP -->

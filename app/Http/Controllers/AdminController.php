@@ -9,18 +9,21 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function dashboard()
+    function dashboard()
     {
         if (Auth::User()->role == 'admin') {
             $data['admin'] = User::find(Auth::User()->id);
 
-            return view('admin.beranda', $data);
-        } elseif (Auth::User()->role == 'manager') {
-            $data['manager'] = User::find(Auth::User()->id);
+            return view('admin_laman.admin_dashboard', $data);
+        }
+    }
 
-            return view('manager.beranda', $data);
-        } else {
-            return redirect('/')->with(['error' => 'Checked your email and password']);
+    function klien()
+    {
+        if (Auth::User()->role == 'user') {
+            $data['user'] = User::find(Auth::User()->id);
+
+            return view('frontend.dashboard_klien', $data);
         }
     }
 }

@@ -9,16 +9,17 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
         <style>
-    
+
         </style>
 
     </head>
     <body>
 
+
                 <div class="container-cs">
                     <!-- Memanggil Sidebar -->
                     @include('layouts.sidebar')
-                    
+
                     <div class="content">
                         <div class="anakcontent">
                             <div class=" ">

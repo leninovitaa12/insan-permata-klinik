@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use function Pest\Laravel\get;
 
 class User extends Authenticatable
+
 {
     use HasFactory, Notifiable;
 
@@ -26,7 +27,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'type'
+        'role'
     ];
 
     /**
@@ -38,6 +39,8 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+
 
     /**
      * Get the attributes that should be cast.
