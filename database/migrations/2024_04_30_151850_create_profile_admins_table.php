@@ -12,16 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('profile_admins', function (Blueprint $table) {
-            $table->integer('nik')->length(16)->primary();
-            $table->string('nama');
-            $table->string('tempat_lahir');
-            $table->date('tanggal_lahir');  
+            $table->bigInteger('nik')->primary(); // Menggunakan bigInteger untuk NIK
+            $table->string('nama', 50); // Tambahkan panjang jika diperlukan
+            $table->string('tempat_lahir', 15); // Tambahkan panjang jika diperlukan
+            $table->date('tanggal_lahir');
             $table->text('alamat');
-            $table->string('no_telp');
-            $table->string('email')->unique();
-            $table->string('jenis_kelamin');
+            $table->string('no_telp', 13); // Tambahkan panjang yang sesuai, misalnya 13
+            $table->string('email', 25)->unique();
+            $table->enum('jenis_kelamin', ['Laki-Laki', 'Perempuan']); // Menggunakan enum untuk jenis kelamin
             $table->timestamps();
         });
+        
+        
     }
 
     /**

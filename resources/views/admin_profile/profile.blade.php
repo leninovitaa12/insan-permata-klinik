@@ -8,77 +8,82 @@
 </head>
 <body>
 
-
 <div class="container-cs">
-                    <!-- Memanggil Sidebar -->
-                    @include('layouts.sidebar')
-                    
-                    <div class="content">
-                        <div class="anakcontent">
-                    <div class="pr-adm">
-                        <h1>PROFIL ADMIN</h1>
-                    </div>
+    <!-- Memanggil Sidebar -->
+    @include('layouts.sidebar')
 
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Informasi Pribadi</h3>
-                                    </div>
-                    
-                                    <div class="card-body">
-                                        <table class="table table-striped">
-                                            <tr>
-                                                <th>NIK</th>
-                                                <td>{{ $profile_admin->nik }}</td>
-                                            </tr>
+    <div class="content">
+        <div class="anakcontent">
+            <div class="pr-adm">
+                <h1>PROFIL ADMIN</h1>
+            </div>
 
-                                            <tr>
-                                                <th>Nama</th>
-                                                <td>{{ $profile_admin->nama }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Tempat Lahir</th>
-                                                <td>{{ $profile_admin->tempat_lahir }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Tanggal Lahir</th>
-                                                <td>{{ $profile_admin->tanggal_lahir->format('d-m-Y') }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Alamat</th>
-                                                <td>{{ $profile_admin->alamat }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>No. Telp</th>
-                                                <td>{{ $profile_admin->no_telp }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Email</th>
-                                                <td>{{ $profile_admin->email }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Jenis Kelamin</th>
-                                                <td>{{ $profile_admin->jenis_kelamin }}</td>
-                                            </tr>
-                                        </table>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Informasi Pribadi</h3>
+                            </div>
+                            @forelse ($profile_admins as $data)
+                            <div class="card-body">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th>NIK</th>
+                                        <td>{{ $data->nik }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nama</th>
+                                        <td>{{ $data->nama }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Tempat Lahir</th>
+                                        <td>{{ $data->tempat_lahir }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Tanggal Lahir</th>
+                                        <td>{{ $data->tanggal_lahir->format('d-m-Y') }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Alamat</th>
+                                        <td>{{ $data->alamat }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>No. Telp</th>
+                                        <td>{{ $data->no_telp }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Email</th>
+                                        <td>{{ $data->email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Jenis Kelamin</th>
+                                        <td>{{ $data->jenis_kelamin }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!-- Tombol Edit -->
+                            <div class="container">
+                                <div class="d-flex">
+                                    <div class="text-right flex-end">
+                                             @csrf
+                                        <a href="{{ route('profile.edit', ['profile' => $data->nik]) }}" class="btn btn-primary">Edit</a>
                                     </div>
-                                        <!-- Tombol Edit -->
-                                        <div class="container">
-                                        <div class="d-flex">
-                                            <div class="text-right flex-end">
-                                            @foreach($profile_admins as $profile)
-                                            <a href="{{ route('profile.edit', ['profile' => $profile->nik]) }}" class="btn btn-primary">Edit</a>
-                                            @endforeach
-                                            </div>
-                                        </div>
-                                        @endforeach
+                                </div>
+                            </div>
+                            @empty
+                                    <div class="alert alert-danger">
+                                        Data Products belum Tersedia.
                                     </div>
+                            @endforelse
+                        </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
+
+</div>
 
 </body>
 </html>
