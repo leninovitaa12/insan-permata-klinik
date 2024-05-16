@@ -1,139 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Kehadiran Klien</title>
-    <link href="style1.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title> Kehadiran</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/style.css') }}">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
-<style>
-    .container-cs {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-    }
 
-    .aside {
-        width: 23%;
-        height: 100%;
-    }
-
-    .content {
-        width: 100%;
-        height: 100%;
-    }
-</style>
 <body>
-    <div class="container-cs">
-        <!-- Sidebar -->
-        @include('layouts.sidebar')
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="logo-"></ion-icon>
+                        </span>
+                        <span class="title">Insan Permata</span>
+                    </a>
+                </li>
 
-        <!-- Main Content -->
-        <div class="content">
-            <div class="container mt-5">
-                <h1 class="text-center text-black">Absen Kehadiran Klien</h1>
-                <form id="absenForm">
-                    <div class="mb-3">
-                        <label for="nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama">
-                    </div>
-                    <div class="mb-3">
-                        <label for="tanggal" class="form-label">Tanggal</label>
-                        <input type="date" class="form-control" id="tanggal" name="tanggal">
-                    </div>
-                    <div class="mb-3">
-                        <label for="paket" class="form-label">Paket</label>
-                        <select id="paket" name="paket" class="form-select">
-                            <!-- Contoh pilihan paket yang bisa dipilih -->
-                            <option value="1">Paket A</option>
-                            <option value="2">Paket B</option>
-                            <option value="3">Paket C</option>
-                            <option value="4">Paket D</option>
-                        </select>
-                    </div>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
 
-                    <div class="mb-3">
-                        <label for="keterangan" class="form-label">Keterangan</label><br>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Client</span>
+                    </a>
+                </li>
 
-                        <!-- Radio button untuk Sakit, Izin, dan Absen -->
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="keterangan" id="sakit" value="Sakit">
-                            <label class="form-check-label" for="sakit">Sakit</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="keterangan" id="izin" value="Izin">
-                            <label class="form-check-label" for="izin">Izin</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="keterangan" id="absen" value="Absen">
-                            <label class="form-check-label" for="absen">Absen</label>
-                        </div>
-                    </div>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="book-outline"></ion-icon>
+                        </span>
+                        <span class="title">Kehadiran</span>
+                    </a>
+                </li>
 
-                    <!-- Tombol Simpan -->
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                </form>
-            </div>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="file-outline"></ion-icon>
+                        </span>
+                        <span class="title">Billing</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="dollar-outline"></ion-icon>
+                        </span>
+                        <span class="title">Biodata Karyawan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Log Out</span>
+                    </a>
+                </li>
+            </ul>
         </div>
+
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <style>
+                /* Styling for table */
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: left;
+                }
+                th {
+                    background-color: #f2f2f2;
+                }
+            </style>
+        </head>
+        <body>
+             <!-- Main Content -->
+      <h2 style="text-align: center;">RIWAYAT KEHADIRAN KLIEN</h2>
+    <div class="main">
+        <table id="riwayatTable">
+            <thead>
+                <tr>
+                    <th>Id clien</th>
+                    <th>Nama</th>
+                    <th>Alamat</th>
+                    <th>No Telepon</th>
+                    <th>Paket</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Keterangan</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="riwayatTableBody">
+                <!-- Data riwayat kehadiran akan dimasukkan di sini -->
+                <tr>
+                    <td>123445</td>
+                    <td>sasha</td>
+                    <td>serayu</td>
+                    <td>098765908</td>
+                    <td>1</td>
+                    <td>perempuan</td>
+                    <td class="radio-container">
+                        <label><input type="radio" name="keterangan1" value="sakit"> Sakit</label>
+                        <label><input type="radio" name="keterangan1" value="izin"> Izin</label>
+                        <label><input type="radio" name="keterangan1" value="absen"> Absen</label>
+                    </td>
+                    <td class="action-buttons">
+                        <button onclick="submitAction(1)">Submit</button>
+                        <button onclick="hapusAction(1)">Hapus</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1234</td>
+                    <td>Asshafa</td>
+                    <td>madiun</td>
+                    <td>09876-09876</td>
+                    <td>2</td>
+                    <td>perempuan</td>
+                    <td class="radio-container">
+                        <label><input type="radio" name="keterangan2" value="sakit"> Sakit</label>
+                        <label><input type="radio" name="keterangan2" value="izin"> Izin</label>
+                        <label><input type="radio" name="keterangan2" value="absen"> Absen</label>
+                    </td>
+                    <td class="action-buttons">
+                        <button onclick="submitAction(2)">Submit</button>
+                        <button onclick="hapusAction(2)">Hapus</button>
+                    </td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
     </div>
 
+    <!-- Script for actions -->
     <script>
-        // Fungsi untuk menyimpan data kehadiran ke localStorage dengan keterangan
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('absenForm');
-
-            form.addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                const nama = document.getElementById('nama').value;
-                const tanggal = document.getElementById('tanggal').value;
-                const paket = document.getElementById('paket').value;
-                const keterangan = document.querySelector('input[name="keterangan"]:checked').value;
-
-                // Data untuk absen dengan keterangan
-                const absenData = {
-                    nama: nama,
-                    tanggal: tanggal,
-                    paket: paket,
-                    keterangan: keterangan
-                };
-
-                // Simpan data kehadiran
-                simpanData(absenData);
-
-                // Arahkan kembali ke halaman riwayatkehadiranklien
-                window.location.href = 'riwayatkehadiranklien';
-            });
-        });
-
-        // Fungsi untuk menyimpan data kehadiran ke localStorage
-        function simpanData(absenData) {
-            absenData.timestamp = new Date().getTime(); // Tambahkan timestamp saat penyimpanan
-
-            // Dapatkan nomor urutan terakhir
-            const lastIndex = getLastIndex();
-
-            // Buat kunci unik untuk data baru
-            const newKey = absenData${lastIndex + 1};
-
-            localStorage.setItem(newKey, JSON.stringify(absenData)); // Simpan data dengan kunci baru
+        function submitAction(rowId) {
+            // Lakukan aksi submit sesuai dengan data baris yang dipilih
+            alert("Data pada baris ke-" + rowId + " telah disubmit!");
+            // Redirect ke halaman billing
+            window.location.href = "billing";
         }
 
-        // Fungsi untuk mendapatkan nomor urutan terakhir
-        function getLastIndex() {
-            let lastIndex = 0;
-            for (let i = 0; i < localStorage.length; i++) {
-                const key = localStorage.key(i);
-                if (key.startsWith('absenData')) {
-                    const currentIndex = parseInt(key.replace('absenData', ''));
-                    if (currentIndex > lastIndex) {
-                        lastIndex = currentIndex;
-                    }
-                }
-            }
-            return lastIndex;
+        function hapusAction(rowId) {
+            // Lakukan aksi hapus sesuai dengan data baris yang dipilih
+            alert("Data pada baris ke-" + rowId + " telah dihapus!");
         }
     </script>
 </body>
+</html>
 </html>

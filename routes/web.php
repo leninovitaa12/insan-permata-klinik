@@ -41,3 +41,12 @@ Route::resource('admin_klien', \App\Http\Controllers\KlienController::class);
 
 Route::resource('admin_form', \App\Http\Controllers\AdminFormController::class);
 
+//sasa admin kehadiran
+Route::get('/kehadiranklien', function () {
+    return view('kehadiran.kehadiran');
+});
+
+Route::get('/riwayatkehadiranklien', function () {
+    return view('kehadiran.riwayatkehadiranklien');
+});
+
