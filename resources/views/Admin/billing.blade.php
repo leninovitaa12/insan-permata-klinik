@@ -56,7 +56,7 @@
                         <span class="icon">
                             <ion-icon name="file-outline"></ion-icon>
                         </span>
-                        <span class="title">Riwayat Kehadiran</span>
+                        <span class="title">Billing</span>
                     </a>
                 </li>
 
@@ -65,7 +65,7 @@
                         <span class="icon">
                             <ion-icon name="dollar-outline"></ion-icon>
                         </span>
-                        <span class="title">Billing</span>
+                        <span class="title">Biodata Karyawan</span>
                     </a>
                 </li>
 

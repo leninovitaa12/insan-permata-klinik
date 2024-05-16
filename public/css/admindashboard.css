@@ -65,9 +65,9 @@ body {
 }
 
 .sidebar {
-    height: 100%; 
+    height: 100%;
     width: 100%;
-    background-color: #475ffd; 
+    background-color: #475ffd;
 }
 
 .sidebar ul {
@@ -155,7 +155,7 @@ body {
 .Klinik {
     width: 260px !important;
     height: 150px !important;
-    padding: 0; 
+    padding: 0;
     }
 
 .gambar-euy {
@@ -163,3 +163,16 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
+.container-cs {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .container {
+    flex: 0 0 200px; /* Set the sidebar width to 200px */
+  }
+
+  .content {
+    flex: 1; /* Take up the remaining space */
+  }

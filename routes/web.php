@@ -23,38 +23,44 @@ Route::middleware(['guest'])->group(function(){
 });
 
 Route::get('/', [SesiController::class, 'index'])->name('frontend.landing');
-Route::post('/', [SesiController::class, 'login']); //Login route
-Route::resource('admin_dashboard',AdminController::class); //dashboard yola
 
-
-//
-
-Route::middleware(['auth'])->group(function(){
-    Route::get('/admin',[AdminController::class, 'index']);
-    Route::get('/admin/klien',[AdminController::class, 'klien']);
-});
-
-//
-Route::get('/admin',[AdminController::class, 'dashboard']);
-
+// Authentication routes
+Route::get('/login', [SesiController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [SesiController::class, 'login']);
 Route::view('/register', 'auth.register')->name('register');
+Route::get('/registration', [AuthController::class, 'register']);
 
-Route::get('registration', [AuthController::class, 'register']);
+// Admin routes
+Route::middleware(['auth'])->group(function(){
+    Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.index');
+    Route::get('/admin/klien', [AdminController::class, 'klien'])->name('admin.klien');
+
+    // Admin dashboard and profile routes
+    Route::resource('admin_dashboard', AdminController::class)->only(['index']); // Hapus route yang tidak diperlukan
+    Route::resource('profile', ProfilAdminController::class)->except(['create', 'store', 'destroy']);
+    //Route::get('/edit_profile', [ProfilAdminController::class, 'editProfile'])->name('edit_profile');
 
 
-Route::get('/billing', function () {
-    return view('Admin.billing');
+    //sasa admin kehadiran
+Route::get('/kehadiran', function () {
+    return view('kehadiran.kehadiran');
 });
 
-//admin profile tria
-Route::resource('profile', \App\Http\Controllers\ProfilAdminController::class);
-Route::get('/edit_profile', [ProfilAdminController::class, 'editProfile'])->name('edit_profile');
+Route::get('/riwayatkehadiranklien', function () {
+    return view('kehadiran.riwayatkehadiranklien');
+});
 
+    // Admin klien and form routes
+    Route::resource('admin_klien', KlienController::class);
+    Route::resource('admin_form', AdminFormController::class);
 
-//membuat rute admin_klien
-Route::resource('admin_klien', \App\Http\Controllers\KlienController::class);
-Route::resource('admin_form', \App\Http\Controllers\AdminFormController::class);
+    // Other admin-specific routes
+    Route::get('/billing', function () {
+        return view('Admin.billing');
+    })->name('billing');
+});
 
-//kehadiran
-
-
+// Fallback route
+Route::fallback(function () {
+    return view('errors.404');
+});
