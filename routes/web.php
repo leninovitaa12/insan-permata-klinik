@@ -43,7 +43,7 @@ Route::middleware(['auth'])->group(function(){
 
     //sasa admin kehadiran
 Route::get('/kehadiran', function () {
-    return view('kehadiran.kehadiran');
+    return view('admin.presensi');
 });
 
 Route::get('/riwayatkehadiranklien', function () {
