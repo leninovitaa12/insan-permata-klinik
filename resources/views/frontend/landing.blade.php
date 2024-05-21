@@ -377,13 +377,13 @@
 
      <!-- SCRIPTS JS -->
      <script src="{{ asset('lp/js/jquery.js') }}"></script>
-     <script src="{{ asset('lp/js/bootstrap.min.js') }}"></script>
-     <script src="{{ asset('lp/js/jquery.sticky.js') }}"></script>
-     <script src="{{ asset('lp/js/jquery.stellar.min.js') }}"></script>
-     <script src="{{ asset('lp/js/wow.min.js') }}"></script>
+     <script src="bootstrap.min.js"></script>
+     <script src="jquery.sticky.js"></script>
+     <script src="jquery.stellar.min.js"></script>
+     <script src="wow.min.js"></script>
      <script src="{{ asset('lp/js/smoothscroll.js') }}"></script>
-     <script src="{{ asset('lp/js/owl.carousel.min.js') }}"></script>
-     <script src="{{ asset('lp/js/custom.js') }}"></script>
+     <script src="owl.carousel.min.js"></script>
+     <script src="custom.js"></script>
 
 </body>
 </html>
