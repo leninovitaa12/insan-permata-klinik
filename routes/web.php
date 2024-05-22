@@ -51,8 +51,8 @@ Route::get('/riwayatkehadiranklien', function () {
 });
 
     // Admin klien and form routes
-    Route::resource('admin_klien', KlienController::class);
-    Route::resource('admin_form', AdminFormController::class);
+    // Route::resource('admin_klien', KlienController::class);
+    // Route::resource('admin_form', AdminFormController::class);
 
     // Other admin-specific routes
     Route::get('/billing', function () {
@@ -64,3 +64,7 @@ Route::get('/riwayatkehadiranklien', function () {
 Route::fallback(function () {
     return view('errors.404');
 });
+
+// without authentication
+ Route::resource('admin_klien', KlienController::class);
+ Route::resource('admin_form', AdminFormController::class);

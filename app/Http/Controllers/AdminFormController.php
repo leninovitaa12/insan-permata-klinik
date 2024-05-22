@@ -9,6 +9,6 @@ class AdminFormController extends Controller
     //
     public function index()
     {
-        return view('admin_laman.admin_form'); // Mengembalikan view 'admin_form.blade.php'
+        return view('Admin.form_client'); // Mengembalikan view 'admin_form.blade.php'
     }
 }
