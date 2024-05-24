@@ -25,7 +25,7 @@ class KlienController extends Controller
         //muncul paginasi
 
         //melakukan pengembalian ke laman admin klien dengan isi DataKlien
-        return view('admin_laman.admin_klien', compact('data_kliens'));
+        return view('Admin.data_client', compact('data_kliens'));
     }
 
     
