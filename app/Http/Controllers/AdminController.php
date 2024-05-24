@@ -14,7 +14,7 @@ class AdminController extends Controller
         if (Auth::User()->role == 'admin') {
             $data['admin'] = User::find(Auth::User()->id);
 
-            return view('admin_laman.admin_dashboard', $data);
+            return view('Admin.admin_dashboard', $data);
         }
     }
 
