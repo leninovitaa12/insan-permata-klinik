@@ -1,124 +1,147 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BerandaDasboard</title>
-    <link href="{{ asset('css/admindashboard.css') }}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <style>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="{{ asset('dashboard/css/style.css') }}">
 
-    </style>
-
-    <!--Custom CSS-->
-    <link rel="stylesheet" href="{{ asset('dashboard/css/style.css') }}">
+	<title>Dashboard</title>
 </head>
 <body>
-    <div class="container-cs">
-        <!-- Sidebar -->
-        <div class="container">
-            <div class="navigation">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="logo-"></ion-icon>
-                            </span>
-                            <span class="title">Insan Permata</span>
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="home-outline"></ion-icon>
-                            </span>
-                            <span class="title">Dashboard</span>
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="people-outline"></ion-icon>
-                            </span>
-                            <span class="title">Client</span>
-                        </a>
-                    </li>
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-face'></i>
+			<span class="text">Hello</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="#">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Client</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Presensi</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-dollar-circle' ></i>
+					<span class="text">Billing</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+            <!-- Bentar
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+             End -->
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
 
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="book-outline"></ion-icon>
-                            </span>
-                            <span class="title">Kehadiran</span>
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="file-outline"></ion-icon>
-                            </span>
-                            <span class="title">Billing</span>
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="dollar-outline"></ion-icon>
-                            </span>
-                            <span class="title">Biodata Karyawan</span>
-                        </a>
-                    </li>
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
 
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="log-out-outline"></ion-icon>
-                            </span>
-                            <span class="title">Log Out</span>
-                        </a>
-                    </li>
-                </ul>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+        </div>
+
+        <ul class="box-info">
+            <li>
+                <i class='bx bxs-calendar-check' ></i>
+                <span class="text">
+                    <h3>50</h3>
+                    <p>Presensi</p>
+                </span>
+            </li>
+            <li>
+                <i class='bx bxs-group' ></i>
+                <span class="text">
+                    <h3>2834</h3>
+                    <p>Jumlah Client</p>
+                </span>
+            </li>
+            <li>
+                <i class='bx bxs-dollar-circle' ></i>
+                <span class="text">
+                    <h3>50</h3>
+                    <p>Billing</p>
+                </span>
+            </li>
+        </ul>
+
+
+        <div class="table-data">
+            <div class="order">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data Client</th>
+                        </tr>
+                    </thead>
+
+                </table>
             </div>
         </div>
-        <!-- End Sidebar -->
 
-        <!-- Content -->
-        <div class="content">
-            <div class="anakcontent">
-                <div class=" ">
-                    <h1 class="txtdb"> Dashboard</h1>
-                </div>
-                <div class="kotak" >
-                    <div class="isi">
-                        <h1 class="ini"> Halo, Yola Septianingrum! </h1>
-                        <h5 class="itu"> Apa yang anda butuhkan hari ini?</h5>
-                    </div>
-                    <div class="Klinik">
-                        <img src="{{ asset ('storage/admin-asset/payment.png') }}" class="gambar-euy" alt="gambar dashboard " >
-                    </div>
-                </div>
-                <div class="kotakbawah">
-                    <div class="kotakdalam">
-                        <div class="kotakaktif">
-                            <h1 class="isikotakaktif"> 20  Jumlah Klien Aktif  </h1>
-                        </div>
-                        <div class="kotakaktif">
-                            <h1 class="isikotakaktif">  5  Jumlah Klien Non Aktif  </h1>
-                        </div>
-                        <div class="kotakaktif">
-                            <h1 class="isikotakaktif">  10 Jumlah Karyawan  </h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Content -->
-    </div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+
+
+	<script src="{{ asset('dashboard/js/main.js') }}"></script>
 </body>
 </html>
