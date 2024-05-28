@@ -36,7 +36,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/admin/klien', [AdminController::class, 'klien'])->name('admin.klien');
 
     // Admin dashboard and profile routes
-    Route::resource('admin_dashboard', AdminController::class)->only(['index']); // Hapus route yang tidak diperlukan
+    // Route::resource('admin_dashboard', AdminController::class)->only(['index']); // Hapus route yang tidak diperlukan
     Route::resource('profile', ProfilAdminController::class)->except(['create', 'store', 'destroy']);
     //Route::get('/edit_profile', [ProfilAdminController::class, 'editProfile'])->name('edit_profile');
 
@@ -68,3 +68,4 @@ Route::fallback(function () {
 // without authentication
  Route::resource('admin_klien', KlienController::class);
  Route::resource('admin_form', AdminFormController::class);
+ Route::resource('admin_dashboard', AdminDashboardController::class);

@@ -9,14 +9,14 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    function dashboard()
-    {
-        if (Auth::User()->role == 'admin') {
-            $data['admin'] = User::find(Auth::User()->id);
+    // function dashboard()
+    // {
+    //     if (Auth::User()->role == 'admin') {
+    //         $data['admin'] = User::find(Auth::User()->id);
 
-            return view('admin_laman.admin_dashboard', $data);
-        }
-    }
+    //         return view('admin_laman.admin_dashboard', $data);
+    //     }
+    // }
 
     function klien()
     {

@@ -11,11 +11,11 @@
      <meta name="author" content="Tooplate">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-     <link rel="stylesheet" href="{{ asset('lp/css/bootstrap.min.css') }}">
-     <link rel="stylesheet" href="{{ asset('lp/css/font-awesome.min.css') }}">
-     <link rel="stylesheet" href="{{ asset('lp/css/animate.css') }}">
-     <link rel="stylesheet" href="{{ asset('lp/css/owl.carousel.css') }}">
-     <link rel="stylesheet" href="{{ asset('lp/css/owl.theme.default.min.css') }}">
+     <link rel="stylesheet" href="{{ asset('storage/asset/css/bootstrap.min.css') }}">
+     <link rel="stylesheet" href="{{ asset('storage/asset/css/font-awesome.min.css') }}">
+     <link rel="stylesheet" href="{{ asset('storage/asset/css/animate.css') }}">
+     <link rel="stylesheet" href="{{ asset('storage/asset/css/owl.carousel.css') }}">
+     <link rel="stylesheet" href="{{ asset('storage/asset/css/owl.theme.default.min.css') }}">
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="{{ asset('lp/css/tooplate-style.css') }}">

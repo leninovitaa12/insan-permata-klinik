@@ -92,8 +92,8 @@
     <style>
 
             .aside {
-                width: 23%;
-                height: 100%;
+                width: 20%;
+                height: 100dvh;
             }
 
             .sidebar {
@@ -105,7 +105,7 @@
             .sidebar ul {
                 list-style-type: none;
                 padding-top: 35px;
-                padding-left: 50px;
+                padding-left: 30px;
             }
 
             .sidebar ul li {

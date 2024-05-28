@@ -18,74 +18,7 @@
 <body>
     <div class="container-cs">
         <!-- Sidebar -->
-        <div class="container">
-            <div class="navigation">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="logo-"></ion-icon>
-                            </span>
-                            <span class="title">Insan Permata</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="home-outline"></ion-icon>
-                            </span>
-                            <span class="title">Dashboard</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="people-outline"></ion-icon>
-                            </span>
-                            <span class="title">Client</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="book-outline"></ion-icon>
-                            </span>
-                            <span class="title">Kehadiran</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="file-outline"></ion-icon>
-                            </span>
-                            <span class="title">Billing</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="dollar-outline"></ion-icon>
-                            </span>
-                            <span class="title">Biodata Karyawan</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="log-out-outline"></ion-icon>
-                            </span>
-                            <span class="title">Log Out</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        @include('layouts.sidebar')
         <!-- End Sidebar -->
 
         <!-- Content -->
@@ -94,31 +27,84 @@
                 <div class=" ">
                     <h1 class="txtdb"> Dashboard</h1>
                 </div>
-                <div class="kotak" >
+                <div class="kotak shadow" >
                     <div class="isi">
-                        <h1 class="ini"> Halo, Yola Septianingrum! </h1>
-                        <h5 class="itu"> Apa yang anda butuhkan hari ini?</h5>
+                        <h1 class="ini"> WELCOME, </h1>
+                        <h5 class="itu"> KLINIK INSAN PERMATA</h5>
+                        <h3 class="motto">INSAN MANDIRI CAHAYA MASA DEPAN</h3>
                     </div>
                     <div class="Klinik">
-                        <img src="{{ asset ('storage/admin-asset/payment.png') }}" class="gambar-euy" alt="gambar dashboard " >
+                        <img src="{{ asset ('storage/asset/payment.png') }}" class="gambar-euy" alt="gambar dashboard " >
                     </div>
                 </div>
-                <div class="kotakbawah">
-                    <div class="kotakdalam">
-                        <div class="kotakaktif">
-                            <h1 class="isikotakaktif"> 20  Jumlah Klien Aktif  </h1>
+                <div class="kotakbawah shadow">
+                    <div class="w-100 h-100 justify-content-between d-flex">
+                        <div class="w-60 align-content-between h-100 d-flex row">
+                            <div class="h-50 w-100">
+                                <div class="container d-flex r-15 mb-3 w-100 h-100 bg-purple-semi" >
+                                    <!--Ngisi Kontent e-->
+                                    <div class=" w-50">
+                                        <img src="{{ asset ('storage/asset/klien.png') }}" class="client my-auto" alt="gambar-klien " >
+                                    </div>
+                                    <div class=" w-50">
+                                            <!-- Contoh Penggunaaan Style dengan class yang sudah di deklarasikan di css-->
+                                    <h4 class=" f-client ">USER CLIENT</h4>
+                                    <h4 class="f-sub">TERDAFTAR</h4>
+                                    </div>
+                                     <!--end Kontent e-->
+                                </div>
+                            </div>
+                            <div class="h-45 w-100">
+                                <div class="container d-flex r-15 w-100 h-100 bg-purple-muda" >
+                                     <!--Ngisi Kontent -->
+                                     <div class=" w-50">
+                                        <img src="{{ asset ('storage/asset/karyawan.png') }}" class="karyawan my-auto" alt="gambar-karyawan " >
+                                     </div>
+                                     <div class="w-50">
+                                         <h4 class="f-karyawan ">EMPLOYEE</h4>
+                                         <h4 class="f-kar">YANG TERDAFTAR</h4>
+                                          <!--end Kontent -->
+                                     </div>
+                                
+                                </div>
+                            </div>
+                            
                         </div>
-                        <div class="kotakaktif">
-                            <h1 class="isikotakaktif">  5  Jumlah Klien Non Aktif  </h1>
+                        <div class="w-40 ps-3 h-100">
+                            <div class=" r-15 w-100 h-100 bg-purple" >
+                                     <!--Ngisi Kontent e-->
+                                     <div class="calendar">
+                                        <div class="date" id="date"></div>
+                                        <div class="time" id="time"></div>
+                                    </div>
+                                     <!--end Kontent e-->
+                            </div>
                         </div>
-                        <div class="kotakaktif">
-                            <h1 class="isikotakaktif">  10 Jumlah Karyawan  </h1>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
         </div>
         <!-- End Content -->
     </div>
+
+    <script>
+    function updateTime() {
+        const now = new Date();
+        const date = now.toLocaleDateString('en-US', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+        });
+        const time = now.toLocaleTimeString('en-US', {
+            hour: '2-digit', minute: '2-digit', second: '2-digit'
+        });
+    
+        document.getElementById('date').textContent = date;
+        document.getElementById('time').textContent = time;
+    }
+    
+    setInterval(updateTime, 1000);
+    updateTime();
+</script>
+    
 </body>
 </html>
